@@ -1,0 +1,180 @@
+:root {
+  --black-color: black;
+  --background-color-active: #e1e1e1;
+  --white-color: white;
+  --background-color: #ececec;
+  --later-color: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black-color: white;
+    --background-color-active: #3e3e3e;
+    --white-color: black;
+    --background-color: #1e1e1e;
+    --later-color: rgba(252, 252, 252, 0.75);
+    --shadow-color: rgba(255, 255, 255, 0.5);
+  }
+}
+html,
+body {
+  padding-left: 4px;
+  padding-right: 4px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--black-color);
+  touch-action: manipulation;
+}
+/* Monedas */
+#apuesta-container {
+  display: flex;
+  flex-direction: column;
+}
+#dinero-del-jugador {
+  margin-bottom: 4px;
+}
+#apuesta-indicator {
+  margin-top: 4px;
+}
+#listado-de-monedas-titulo {
+  margin-bottom: 0px;
+}
+#listado-de-monedas {
+  list-style: none;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+#apuesta-actual-container {
+  display: grid;
+  grid-template-columns: 80% auto;
+  column-gap: 4px;
+  margin-bottom: 8px;
+  height: 40px;
+}
+#texto-apuesta {
+  background-color: var(--white-color);
+  padding-left: 8px;
+  display: grid;
+  white-space: nowrap;
+  align-items: center;
+  overflow-x: scroll;
+  height: 100%;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 2px var(--shadow-color);
+}
+#get-more-coins:disabled {
+  color: var(--later-color);
+}
+.small-padding-button {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* Monedas end */
+#button-container {
+  display: none;
+}
+button {
+  margin-top: 8px;
+  margin-bottom: 9px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+.transparent-button {
+  box-shadow: 0px 0px 2px var(--shadow-color);
+  background-color: var(--background-color);
+  color: var(--white-color);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--black-color);
+}
+.chip-button:active {
+  background-color: var(--background-color-active);
+}
+#bet-all {
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+#start-button {
+  margin-top: 16px;
+  background-color: #32a852;
+}
+#start-button:disabled {
+  background-color: #839587;
+  color: #d0d0d0;
+}
+#start-button:hover:enabled {
+  background-color: #1c8c3a;
+}
+#start-button:active:enabled {
+  background-color: #3fb85f;
+}
+#pide-mas {
+  background-color: #2d86fa;
+}
+#pide-mas:disabled {
+  background-color: #7899c4;
+  color: #d0d0d0;
+}
+#pide-mas:hover:enabled {
+  background-color: #1768d2;
+}
+#pide-mas:active:enabled {
+  background-color: #2d86fa;
+}
+#quedarse {
+  background-color: #fac02d;
+  color: black;
+}
+#quedarse:disabled {
+  background-color: #cbae64;
+  color: #545454;
+}
+#quedarse:hover:enabled {
+  background-color: #dba317;
+}
+#quedarse:active:enabled {
+  background-color: #f4c345;
+}
+#jugar-de-nuevo:enabled {
+  background-color: #fa2d64;
+}
+#jugar-de-nuevo:disabled {
+  background-color: #d26380;
+  color: #d0d0d0;
+}
+#jugar-de-nuevo:hover:enabled {
+  background-color: #d3184a;
+}
+#jugar-de-nuevo:active:enabled {
+  background-color: #ef4774;
+}
+#footer-text {
+  margin-bottom: 24px;
+}
+@media only screen and (hover: none) and (pointer: coarse) {
+  #footer-text {
+    width: 100%;
+    text-align: center;
+  }
+  #button-container {
+    display: none;
+    flex-direction: column;
+  }
+  #coins-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}

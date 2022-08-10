@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="default"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#ececec"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1e1e1e"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height"
+    />
+    <title>Blackjack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./cookies.js"></script>
+    <script src="./funcionesCombate.js"></script>
+    <script src="./monedas.js"></script>
+    <script src="./juego.js"></script>
+  </head>
+  <body onload="cargarJuego()">
+    <h1>Blackjack 👑</h1>
+    <h4 id="dinero-del-jugador">Tu efectivo es: $0</h4>
+    <p id="apuesta-indicator">Apuesta: $0</p>
+    <p id="mensajes"></p>
+    <div id="apuesta-container">
+      <h3>¿Cuál será tu apuesta?</h3>
+      <p id="listado-de-monedas-titulo">Cuentas con:</p>
+      <ul id="listado-de-monedas"></ul>
+      <div id="apuesta-actual-container">
+        <div id="texto-apuesta"></div>
+        <button
+          class="transparent-button"
+          id="trash-apuesta"
+          onclick="borrarMonedas()"
+        >
+          🗑
+        </button>
+      </div>
+      <button id="bet-all" class="transparent-button" onclick="apostarTodo()">
+        Apostar todo
+      </button>
+      <div id="coins-container">
+        <button
+          class="transparent-button small-padding-button"
+          id="red-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🔴"
+        >
+          🔴
+        </button>
+        <button
+          class="transparent-button small-padding-button"
+          id="orange-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🟠"
+        >
+          🟠
+        </button>
+        <button
+          class="transparent-button small-padding-button"
+          id="yellow-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🟡"
+        >
+          🟡
+        </button>
+        <button
+          class="transparent-button small-padding-button"
+          id="green-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🟢"
+        >
+          🟢
+        </button>
+        <button
+          class="transparent-button small-padding-button"
+          id="blue-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🔵"
+        >
+          🔵
+        </button>
+        <button
+          class="transparent-button small-padding-button"
+          id="purple-chip"
+          onclick="agregarMoneda(this.value)"
+          value="🟣"
+        >
+          🟣
+        </button>
+      </div>
+      <button id="start-button" onclick="iniciarJuego()">Iniciar</button>
+      <button
+        id="get-more-coins"
+        class="transparent-button"
+        onclick="moreChipsPlease()"
+      >
+        Obtener más monedas
+      </button>
+    </div>
+    <div id="button-container">
+      <button id="pide-mas" onclick="pedirOtraCarta(cartasJugador)">
+        Otra carta
+      </button>
+      <button id="quedarse" onclick="quedarse()">Quedarse</button>
+      <br /><br />
+      <button id="jugar-de-nuevo" onclick="reiniciarJuego()">
+        Reiniciar juego
+      </button>
+    </div>
+    <p id="footer-text">Made with 💖 by ad_rojo</p>
+  </body>
+</html>
